@@ -89,6 +89,15 @@ section {
   from { opacity: 0; transform: scale(0.7); }
   to { opacity: 1; transform: scale(1); }
 }
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #eee;
+    font-size: 14px;
+    color: #444;
+}
 /* Skills Pills */
 .skills-container {
   display: flex;
@@ -114,14 +123,7 @@ section {
   box-shadow: 0 0 15px #bb86fc;
 }
 
-/* Footer */
-footer {
-    margin-top: 50px;
-    padding: 20px;
-    background-color: #eee;
-    font-size: 14px;
-    color: #444;
-}
+
 
 
 
