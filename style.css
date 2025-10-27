@@ -1,0 +1,88 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fafafa;
+    color: #222;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 20px 10px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Navbar */
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #6a0dad; /* Purple link color */
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    padding-bottom: 4px;
+}
+
+nav a:hover {
+    border-color: #6a0dad; /* Purple underline on hover */
+}
+
+/* Headings */
+h1, h2, h3 {
+    color: #6a0dad; /* Purple headings */
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Skills List */
+ul {
+    width: fit-content;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 6px;
+    font-size: 18px;
+}
+
+/* Project Cards */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 2px solid #e7d1f5; /* Soft purple border */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease-in-out;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+/* Card Links */
+.card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #6a0dad;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+}
