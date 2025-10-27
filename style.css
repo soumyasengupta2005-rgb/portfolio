@@ -89,6 +89,30 @@ section {
   from { opacity: 0; transform: scale(0.7); }
   to { opacity: 1; transform: scale(1); }
 }
+/* Skills Pills */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.skill {
+  background-color: #3b225d;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 50px;
+  font-size: 14px;
+  box-shadow: 0 0 10px rgba(187, 134, 252, 0.6);
+  border: 2px solid #bb86fc;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+}
+
+.skill:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 15px #bb86fc;
+}
 
 /* Footer */
 footer {
@@ -98,6 +122,7 @@ footer {
     font-size: 14px;
     color: #444;
 }
+
 
 
 
