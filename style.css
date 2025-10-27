@@ -67,6 +67,22 @@ section {
     margin: 10px 0;
 }
 
+.profile-photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #bb86fc;
+  box-shadow: 0 0 20px #bb86fc;
+  margin: 20px auto;
+  display: block;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
 /* Footer */
 footer {
     margin-top: 50px;
@@ -75,3 +91,4 @@ footer {
     font-size: 14px;
     color: #444;
 }
+
