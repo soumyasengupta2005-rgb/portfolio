@@ -54,21 +54,36 @@
   <p>© 2025 Soumya Sengupta. All rights reserved.</p>
 </footer>
 <script>
-  const sections = document.querySelectorAll("section");
+  // Safe section reveal: use IntersectionObserver when available,
+  // otherwise fall back to showing sections immediately.
+  document.addEventListener("DOMContentLoaded", function () {
+    const sections = document.querySelectorAll("section");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  }, { threshold: 0.2 });
+    // If no sections found, do nothing
+    if (!sections.length) return;
 
-  sections.forEach(section => observer.observe(section));
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add("visible");
+        });
+      }, { threshold: 0.18 });
+
+      sections.forEach(section => observer.observe(section));
+    } else {
+      sections.forEach(s => s.classList.add("visible"));
+    }
+
+    setTimeout(() => {
+      sections.forEach(s => s.classList.add("visible"));
+    }, 1000);
+  });
 </script>
+
 
 </body>
 </html>
+
 
 
 
