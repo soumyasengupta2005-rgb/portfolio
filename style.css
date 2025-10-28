@@ -239,7 +239,7 @@ footer {
   align-items: center;
   flex-direction: column;
   text-align: center;
-  padding: 100px 20px;
+  padding: 60px 20px;
   background: transparent; /* removed black boxy background */
   color: white;
 }
@@ -282,3 +282,4 @@ footer {
   background-color: #a04cff;
   transform: translateY(-2px);
 }
+
