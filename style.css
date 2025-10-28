@@ -219,6 +219,68 @@ footer {
   background-color: #bb86fc;
   box-shadow: 0 0 10px #bb86fc;
 }
+/* ------------------ HOME SECTION ------------------ */
+
+.home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #1a1a1a, #222);
+  color: white;
+}
+
+.home-content {
+  max-width: 700px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #8a2be2;
+  box-shadow: 0 0 20px rgba(138, 43, 226, 0.4);
+  margin-bottom: 20px;
+}
+
+.home h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.home h2 {
+  font-size: 1.2rem;
+  color: #b58aff;
+  margin-bottom: 15px;
+  font-weight: normal;
+}
+
+.home p {
+  font-size: 1rem;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 25px;
+  background-color: #8a2be2;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: #a04cff;
+  transform: translateY(-2px);
+}
+
 
 
 
