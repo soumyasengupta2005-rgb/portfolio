@@ -94,7 +94,6 @@ section {
   to { opacity: 1; transform: scale(1); }
 }
 
-/* Footer */
 footer {
   text-align: center;
   background: #4B0082; /* Deep purple */
@@ -124,11 +123,10 @@ footer {
 }
 
 .footer-links img {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   margin-right: 8px;
   vertical-align: middle;
-  filter: brightness(0) invert(1); /* makes icons white */
 }
 
 /* Skills Pills */
@@ -218,6 +216,7 @@ footer {
   background-color: #bb86fc;
   box-shadow: 0 0 10px #bb86fc;
 }
+
 
 
 
