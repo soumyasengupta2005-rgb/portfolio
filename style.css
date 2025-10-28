@@ -220,6 +220,18 @@ footer {
   background-color: #bb86fc;
   box-shadow: 0 0 10px #bb86fc;
 }
+/* ensure sections still occupy space while hidden */
+section {
+  min-height: 120px; /* avoids huge empty-looking pages */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 section {
   opacity: 0;
@@ -231,6 +243,7 @@ section.visible {
   opacity: 1;
   transform: translateY(0);
 }
+
 
 
 
