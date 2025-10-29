@@ -284,7 +284,7 @@ footer {
 }
 
 .about {
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
   background: #1e1e1e;
   color: #fff;
@@ -317,5 +317,6 @@ footer {
     transform: translateY(0);
   }
 }
+
 
 
