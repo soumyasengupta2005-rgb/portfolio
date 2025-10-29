@@ -32,7 +32,7 @@
   </div>
 </section>
     
-<section id="about" class="about">
+<section id="about" class="reveal">
   <div class="about-content">
     <h2>About Me</h2>
     <p>
@@ -76,8 +76,21 @@
   <p>© 2025 Soumya Sengupta. All rights reserved.</p>
 </footer>
 
+<script src="https://unpkg.com/scrollreveal"></script>
+<script>
+  ScrollReveal().reveal('.reveal', {
+    delay: 200,
+    distance: '60px',
+    origin: 'bottom',
+    duration: 1000,
+    easing: 'ease-in-out',
+    reset: false
+  });
+</script>
+ 
 </body>
 </html>
+
 
 
 
