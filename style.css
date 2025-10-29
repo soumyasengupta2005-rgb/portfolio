@@ -23,7 +23,7 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #a000ff, #ff00c8);
+  background: linear-gradient(to bottom, #a000ff, #ff00c8);
   box-shadow: 0 5px 25px rgba(160, 0, 255, 0.5);
   padding: 25px 0;
   position: relative;
@@ -322,6 +322,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 
 
 
