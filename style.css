@@ -286,7 +286,7 @@ footer {
 .about {
   padding: 60px 20px;
   text-align: center;
-  background: #1e1e1e;
+  background: transparent; 
   color: #fff;
   opacity: 0;
   transform: translateY(30px);
@@ -317,6 +317,7 @@ footer {
     transform: translateY(0);
   }
 }
+
 
 
 
