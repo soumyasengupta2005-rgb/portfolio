@@ -48,6 +48,23 @@
   </div>
 </section>
 
+<section id="certificates" class="certificates">
+  <h2>Certificates</h2>
+  <div class="certificates-container">
+    <div class="certificate-card">
+      <img src="certificate1.jpg" alt="Certificate 1">
+      <h3>Python Programming</h3>
+      <p>Issued by Coursera</p>
+    </div>
+    <div class="certificate-card">
+      <img src="certificate2.jpg" alt="Certificate 2">
+      <h3>Data Analysis with Python</h3>
+      <p>Issued by IBM Skills Network</p>
+    </div>
+    <!-- Add more cards here -->
+  </div>
+</section>
+
 <section id="skills" class="reveal">
   <h2>Skills</h2>
   <div class="skills-container">
@@ -87,9 +104,30 @@
     reset: false
   });
 </script>
- 
+<script>
+  // ===== Certificate Popup Logic =====
+  const certModal = document.getElementById("certificateModal");
+  const modalImg = document.getElementById("certificateModalImg");
+  const modalClose = document.querySelector(".close");
+
+  document.querySelectorAll(".certificate-card img").forEach(img => {
+    img.addEventListener("click", () => {
+      modalImg.src = img.src;
+      certModal.style.display = "flex";
+    });
+  });
+
+  modalClose.addEventListener("click", () => {
+    certModal.style.display = "none";
+  });
+
+  window.addEventListener("click", e => {
+    if (e.target === certModal) certModal.style.display = "none";
+  });
+</script>
 </body>
 </html>
+
 
 
 
