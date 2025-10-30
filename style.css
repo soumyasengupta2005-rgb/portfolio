@@ -421,6 +421,21 @@ footer {
 .close:hover {
   color: #ff4081;
 }
+.certificate-card img {
+  width: 250px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-card img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(187, 134, 252, 0.6);
+}
+
+
 
 
 
