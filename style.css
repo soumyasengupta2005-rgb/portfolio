@@ -485,6 +485,29 @@ footer {
   color: #e0e0e0;
   font-size: 0.9em;
 }
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.projects-title {
+  color: #b388ff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 80px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-shadow: 0 0 20px rgba(179,136,255,0.5),
+               0 0 40px rgba(114,9,183,0.3);
+  animation: fadeInUp 1.2s ease-in-out;
+}
+
 
 
 
