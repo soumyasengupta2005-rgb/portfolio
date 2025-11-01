@@ -280,17 +280,13 @@ footer {
   margin-bottom: 15px;
   display: inline-block;
   white-space: nowrap;
-  overflow: visible; 
-  min-width: 250px;  
+  overflow: hidden;     /* keeps cursor next to text */
   vertical-align: bottom;
   line-height: 1.4em;
-  position: relative;
 }
 
 .glow-text::after {
   content: "|";
-  position: absolute;
-  right: -10px;
   color: #ffccff;
   text-shadow: 0 0 8px #ff99ff;
   animation: blink 0.8s infinite;
@@ -539,6 +535,7 @@ body.fade-out {
   .home h1 { font-size: 1.8rem; }
   .card { width: 90%; }
 }
+
 
 
 
