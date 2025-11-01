@@ -272,7 +272,26 @@ footer {
   margin-bottom: 15px;
   font-weight: normal;
 }
+.glow-text {
+  font-size: 1.2rem;
+  color: #d8b4ff;
+  text-shadow: 0 0 10px #b84fff, 0 0 20px #8000ff;
+  margin-bottom: 15px;
+  min-height: 1.5em; /* prevents layout jump when text changes */
+  transition: color 0.3s ease;
+}
 
+.glow-text::after {
+  content: "|";
+  animation: blink 0.8s infinite;
+  color: #ffccff;
+  margin-left: 4px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
 .home p {
   font-size: 1rem;
   color: #ddd;
@@ -371,7 +390,7 @@ footer {
 .close:hover {
   color: #a000ff;
 }
-/* ===== Certificate Modal Styling ===== */
+
 #certificateModal {
   display: none;
   position: fixed;
@@ -511,6 +530,7 @@ body.fade-out {
   .home h1 { font-size: 1.8rem; }
   .card { width: 90%; }
 }
+
 
 
 
