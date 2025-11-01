@@ -165,23 +165,25 @@ document.addEventListener("DOMContentLoaded", () => {
     "Web Creator",
     "Game Developer"
   ];
-  let i = 0, j = 0, currentText = "", isDeleting = false;
+  let i = 0, j = 0, isDeleting = false;
 
   function typeEffect() {
-    currentText = texts[i];
+    const current = texts[i];
+    const partial = current.substring(0, j);
 
-    const displayText = currentText.substring(0, j) + "\u00A0";
-    typeTarget.textContent = displayText;
+    requestAnimationFrame(() => {
+      typeTarget.textContent = partial;
+    });
 
-    if (!isDeleting && j < currentText.length) {
+    if (!isDeleting && j < current.length) {
       j++;
     } else if (isDeleting && j > 0) {
       j--;
     }
 
-    if (!isDeleting && j === currentText.length) {
+    if (!isDeleting && j === current.length) {
       isDeleting = true;
-      setTimeout(typeEffect, 1200); // pause before deleting
+      setTimeout(typeEffect, 1000);
       return;
     }
 
@@ -190,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
       i = (i + 1) % texts.length;
     }
 
-    const speed = isDeleting ? 60 : 120;
+    const speed = isDeleting ? 80 : 130;
     setTimeout(typeEffect, speed);
   }
 
@@ -198,9 +200,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
 </body>
 </html>
+
 
 
 
