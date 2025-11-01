@@ -272,20 +272,24 @@ footer {
   margin-bottom: 15px;
   font-weight: normal;
 }
+
 .glow-text {
   font-size: 1.2rem;
   color: #d8b4ff;
   text-shadow: 0 0 10px #b84fff, 0 0 20px #8000ff;
   margin-bottom: 15px;
-  min-height: 1.5em; /* prevents layout jump when text changes */
-  transition: color 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  min-height: 1.5em; 
 }
 
 .glow-text::after {
   content: "|";
-  animation: blink 0.8s infinite;
-  color: #ffccff;
   margin-left: 4px;
+  color: #ffccff;
+  text-shadow: 0 0 8px #ff99ff;
+  animation: blink 0.8s infinite;
 }
 
 @keyframes blink {
@@ -530,6 +534,7 @@ body.fade-out {
   .home h1 { font-size: 1.8rem; }
   .card { width: 90%; }
 }
+
 
 
 
