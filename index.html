@@ -157,55 +157,50 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const typeTarget = document.getElementById("typewriter");
-  const texts = [
-    "Physics Student",
-    "Python Developer",
-    "Web Creator",
-    "Game Developer"
-  ];
+  document.addEventListener("DOMContentLoaded", () => {
+    const typewriterElement = document.getElementById("typewriter");
+    const words = [
+      "Physics Student",
+      "Python Developer",
+      "Game Developer",
+      "Web Designer"
+    ];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typingSpeed = 120;
+    const deletingSpeed = 60;
+    const delayBetweenWords = 1500;
 
-  let i = 0;      // which word
-  let j = 0;      // which letter
-  let isDeleting = false;
+    function type() {
+      const currentWord = words[wordIndex];
+      const visibleText = currentWord.substring(0, charIndex);
+      typewriterElement.textContent = visibleText;
 
-  function typeEffect() {
-    const current = texts[i];
-    let displayed = current.slice(0, j);
-
-    typeTarget.textContent = displayed;
-
-    if (!isDeleting && j < current.length) {
-      j++;
-    } else if (isDeleting && j > 0) {
-      j--;
+      if (!isDeleting && charIndex < currentWord.length) {
+        charIndex++;
+        setTimeout(type, typingSpeed);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(type, deletingSpeed);
+      } else {
+        if (!isDeleting) {
+          isDeleting = true;
+          setTimeout(type, delayBetweenWords);
+        } else {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(type, 500);
+        }
+      }
     }
-
-    // Pause when a word finishes typing
-    if (!isDeleting && j === current.length) {
-      isDeleting = true;
-      setTimeout(typeEffect, 1200);  // hold full word
-      return;
-    }
-
-    // Move to next word once deleted completely
-    if (isDeleting && j === 0) {
-      isDeleting = false;
-      i = (i + 1) % texts.length;
-    }
-
-    // Adjust speed and ensure frame stability
-    const speed = isDeleting ? 80 : 140;
-    setTimeout(() => requestAnimationFrame(typeEffect), speed);
-  }
-
-  typeEffect();
-});
+    type();
+  });
 </script>
 
 </body>
 </html>
+
 
 
 
