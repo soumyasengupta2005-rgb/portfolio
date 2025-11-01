@@ -157,44 +157,51 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const typeTarget = document.getElementById("typewriter");
-    const texts = [
-      "Physics Student",
-      "Python Developer",
-      "Game and App Developer",
-    ];
-    let i = 0, j = 0, currentText = "", isDeleting = false;
+document.addEventListener("DOMContentLoaded", () => {
+  const typeTarget = document.getElementById("typewriter");
+  const texts = [
+    "Physics Student",
+    "Python Developer",
+    "Web Creator",
+    "Game Developer"
+  ];
+  let i = 0, j = 0, currentText = "", isDeleting = false;
 
-    function typeEffect() {
-      currentText = texts[i];
-      if (isDeleting) {
-        typeTarget.textContent = currentText.substring(0, j--);
-      } else {
-        typeTarget.textContent = currentText.substring(0, j++);
-      }
+  function typeEffect() {
+    currentText = texts[i];
 
-      if (!isDeleting && j === currentText.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 1500);
-        return;
-      }
+    const displayText = currentText.substring(0, j) + "\u00A0";
+    typeTarget.textContent = displayText;
 
-      if (isDeleting && j === 0) {
-        isDeleting = false;
-        i = (i + 1) % texts.length;
-      }
-
-      const speed = isDeleting ? 60 : 120;
-      setTimeout(typeEffect, speed);
+    if (!isDeleting && j < currentText.length) {
+      j++;
+    } else if (isDeleting && j > 0) {
+      j--;
     }
 
-    typeEffect();
-  });
+    if (!isDeleting && j === currentText.length) {
+      isDeleting = true;
+      setTimeout(typeEffect, 1200); // pause before deleting
+      return;
+    }
+
+    if (isDeleting && j === 0) {
+      isDeleting = false;
+      i = (i + 1) % texts.length;
+    }
+
+    const speed = isDeleting ? 60 : 120;
+    setTimeout(typeEffect, speed);
+  }
+
+  typeEffect();
+});
 </script>
+
 
 </body>
 </html>
+
 
 
 
