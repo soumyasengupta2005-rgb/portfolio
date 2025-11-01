@@ -165,15 +165,16 @@ document.addEventListener("DOMContentLoaded", () => {
     "Web Creator",
     "Game Developer"
   ];
-  let i = 0, j = 0, isDeleting = false;
+
+  let i = 0;      // which word
+  let j = 0;      // which letter
+  let isDeleting = false;
 
   function typeEffect() {
     const current = texts[i];
-    const partial = current.substring(0, j);
+    let displayed = current.slice(0, j);
 
-    requestAnimationFrame(() => {
-      typeTarget.textContent = partial;
-    });
+    typeTarget.textContent = displayed;
 
     if (!isDeleting && j < current.length) {
       j++;
@@ -181,19 +182,22 @@ document.addEventListener("DOMContentLoaded", () => {
       j--;
     }
 
+    // Pause when a word finishes typing
     if (!isDeleting && j === current.length) {
       isDeleting = true;
-      setTimeout(typeEffect, 1000);
+      setTimeout(typeEffect, 1200);  // hold full word
       return;
     }
 
+    // Move to next word once deleted completely
     if (isDeleting && j === 0) {
       isDeleting = false;
       i = (i + 1) % texts.length;
     }
 
-    const speed = isDeleting ? 80 : 130;
-    setTimeout(typeEffect, speed);
+    // Adjust speed and ensure frame stability
+    const speed = isDeleting ? 80 : 140;
+    setTimeout(() => requestAnimationFrame(typeEffect), speed);
   }
 
   typeEffect();
@@ -202,6 +206,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </body>
 </html>
+
 
 
 
