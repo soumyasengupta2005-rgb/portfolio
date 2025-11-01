@@ -280,13 +280,17 @@ footer {
   margin-bottom: 15px;
   display: inline-block;
   white-space: nowrap;
-  overflow: hidden;
-  min-height: 1.5em; 
+  overflow: visible; 
+  min-width: 250px;  
+  vertical-align: bottom;
+  line-height: 1.4em;
+  position: relative;
 }
 
 .glow-text::after {
   content: "|";
-  margin-left: 4px;
+  position: absolute;
+  right: -10px;
   color: #ffccff;
   text-shadow: 0 0 8px #ff99ff;
   animation: blink 0.8s infinite;
@@ -296,6 +300,7 @@ footer {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
 }
+
 .home p {
   font-size: 1rem;
   color: #ddd;
@@ -534,6 +539,7 @@ body.fade-out {
   .home h1 { font-size: 1.8rem; }
   .card { width: 90%; }
 }
+
 
 
 
