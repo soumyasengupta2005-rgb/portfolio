@@ -23,7 +23,7 @@
       <img src="profile.jpg" alt="Soumya Profile" class="profile-photo">
     </div>
     <h1>Soumya Sengupta</h1>
-    <h2>Physics Student & Python Developer</h2>
+    <h2 id="typewriter" class="glow-text"></h2>
     <p>
       Passionate about creating efficient tools and exploring the intersection of science and technology.
       Currently working on and trying to build web pages,data analysis and more python based apps and games.
@@ -156,8 +156,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const typeTarget = document.getElementById("typewriter");
+    const texts = [
+      "Physics Student",
+      "Python Developer",
+      "Game and App Developer",
+    ];
+    let i = 0, j = 0, currentText = "", isDeleting = false;
+
+    function typeEffect() {
+      currentText = texts[i];
+      if (isDeleting) {
+        typeTarget.textContent = currentText.substring(0, j--);
+      } else {
+        typeTarget.textContent = currentText.substring(0, j++);
+      }
+
+      if (!isDeleting && j === currentText.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 1500);
+        return;
+      }
+
+      if (isDeleting && j === 0) {
+        isDeleting = false;
+        i = (i + 1) % texts.length;
+      }
+
+      const speed = isDeleting ? 60 : 120;
+      setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+  });
+</script>
+
 </body>
 </html>
+
 
 
 
