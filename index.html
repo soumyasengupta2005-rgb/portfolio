@@ -17,238 +17,169 @@
         </nav>
     </header>
 
-<section id="home" class="home">
-  <div class="home-content">
-    <div class="profile-photo-container">
-      <img src="profile.jpg" alt="Soumya Profile" class="profile-photo">
+    <section id="home" class="home">
+        <div class="home-content">
+            <div class="profile-photo-container">
+                <img src="profile.jpg" alt="Soumya Profile" class="profile-photo">
+            </div>
+            <h1>Soumya Sengupta</h1>
+            <h2 id="typewriter" class="glow-text"></h2>
+            <p>
+                Passionate about creating efficient tools and exploring the intersection of science and technology.
+                Currently building web pages, data analysis projects, and Python-based apps and games.
+            </p>
+            <a href="projects.html" class="btn">View My Projects</a>
+        </div>
+    </section>
+
+    <section id="about" class="reveal">
+        <div class="about-content">
+            <h2>About Me</h2>
+            <p>
+                Hi, I'm <strong>Soumya Sengupta</strong> — a <strong>Physics student</strong> and <strong>Python developer</strong>
+                who loves blending science with creativity. I enjoy building tools that make studying and everyday life
+                more efficient — from custom Pomodoro timers to AI-based apps and web projects.
+            </p>
+            <p>
+                When I'm not coding, I'm usually exploring concepts in space physics, drawing, or learning something new
+                about how the universe works. My goal is to pursue <strong>research in physics</strong> while continuing
+                to grow as a developer and creator who bridges technology with curiosity.
+            </p>
+        </div>
+    </section>
+
+    <section id="certificates" class="certificates reveal">
+        <h2>Certificates</h2>
+        <div class="certificates-container">
+            <div class="certificate-card">
+                <img src="python-certificate.jpg" alt="Certificate 1">
+                <h3>Python Programming</h3>
+                <p>Issued by Udemy</p>
+            </div>
+            <div class="certificate-card">
+                <img src="HarvardX-certificate.jpg" alt="Certificate 2">
+                <h3>Super Earths & Possibility of Life</h3>
+                <p>Issued by HarvardX & edX</p>
+            </div>
+            <div class="certificate-card">
+                <img src="google main.jpg" alt="Certificate 3">
+                <h3>Essentials of AI & Its Ethical Use</h3>
+                <p>Issued by Google & Coursera</p>
+            </div>
+            <div class="certificate-card">
+                <img src="Python using ai certificate main_page-0001.jpg" alt="Certificate 4">
+                <h3>Python Using AI</h3>
+                <p>Issued by AI For Techies</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="reveal">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+            <span class="skill">Python</span>
+            <span class="skill">AI</span>
+            <span class="skill">Game Development</span>
+            <span class="skill">Physics</span>
+            <span class="skill">Data Analysis</span>
+        </div>
+    </section>
+
+    <div id="contact"></div>
+    <footer>
+        <p>Connect with me:</p>
+        <div class="footer-links">
+            <a href="mailto:soumya.ckd2005@gmail.com"
+               onclick="if(!window.navigator.userAgent.match(/Mobi/)) {
+                 window.open('https://mail.google.com/mail/?view=cm&to=soumya.ckd2005@gmail.com');
+                 return false;
+               }">
+                <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Email Icon">
+                <span>Email</span>
+            </a>
+            <a href="https://github.com/soumyasengupta2005-rgb" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub Icon">
+                GitHub
+            </a>
+        </div>
+        <p>© 2025 Soumya Sengupta. All rights reserved.</p>
+    </footer>
+
+    <div id="certificateModal" class="modal">
+        <span class="close">&times;</span>
+        <img id="certificateModalImg" class="modal-content" alt="Expanded Certificate">
     </div>
-    <h1>Soumya Sengupta</h1>
-    <h2 id="typewriter" class="glow-text"></h2>
-    <p>
-      Passionate about creating efficient tools and exploring the intersection of science and technology.
-      Currently working on and trying to build web pages,data analysis and more python based apps and games.
-    </p>
-    <a href="projects.html" class="btn">View My Projects</a>
-  </div>
-</section>
-    
-<section id="about" class="reveal">
-  <div class="about-content">
-    <h2>About Me</h2>
-    <p>
-      Hi, I’m <strong>Soumya Sengupta</strong> — a <strong>Physics student</strong> and <strong>Python developer</strong> 
-      who loves blending science with creativity. I enjoy building tools that make studying and everyday life 
-      more efficient — from custom Pomodoro timers to AI-based apps and web projects.
-    </p>
-    <p>
-      When I’m not coding, I’m usually exploring concepts in space physics, drawing, or learning something new 
-      about how the universe works. My goal is to pursue <strong>research in physics</strong> while continuing 
-      to grow as a developer and creator who bridges technology with curiosity.
-    </p>
-  </div>
-</section>
 
-<section id="certificates" class="certificates reveal">
-  <h2>Certificates</h2>
-  <div class="certificates-container">
-    <div class="certificate-card">
-      <img src="python-certificate.jpg" alt="Certificate 1">
-      <h3>Python Programming</h3>
-      <p>Issued by Udemy</p>
-    </div>
-    <div class="certificate-card">
-      <img src="HarvardX-certificate.jpg" alt="Certificate 2">
-      <h3>A course about super earths and possibility of life in them</h3>
-      <p>Issued by HARVARDX and EDX</p>
-    </div>
-    <div class="certificate-card">
-      <img src="google main.jpg" alt="Certificate 3">
-      <h3>A course about essentials of Ai and its effective and moral use</h3>
-      <p>Issued by Google and Coursera</p>
-    </div>
-    <div class="certificate-card">
-      <img src="Python using ai certificate main_page-0001.jpg" alt="Certificate 4">
-      <h3>A course about Python using Ai</h3>
-      <p>Issued by AI FOR TECHIES</p>
-    </div>  
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        ScrollReveal().reveal('.reveal', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            duration: 900,
+            easing: 'ease-in-out',
+            reset: false
+        });
+    </script>
+    <script>
+        const certModal = document.getElementById("certificateModal");
+        const modalImg = document.getElementById("certificateModalImg");
+        const modalClose = document.querySelector(".close");
 
-  </div>
-</section>
+        document.querySelectorAll(".certificate-card img").forEach(img => {
+            img.addEventListener("click", () => {
+                modalImg.src = img.src;
+                certModal.style.display = "flex";
+            });
+        });
 
-<section id="skills" class="reveal">
-  <h2>Skills</h2>
-  <div class="skills-container">
-    <span class="skill">HTML</span>
-    <span class="skill">CSS</span>
-    <span class="skill">Python</span>
-    <span class="skill">AI</span>
-    <span class="skill">Game Development</span>
-    <span class="skill">Physics</span>
-  </div>
-</section>
+        modalClose.addEventListener("click", () => { certModal.style.display = "none"; });
+        window.addEventListener("click", e => { if (e.target === certModal) certModal.style.display = "none"; });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            document.body.classList.add("fade-in");
 
-<div id="contact"></div>
-<footer>
-  <p>Connect with me:</p>
-  <div class="footer-links">
-    <a href="mailto:soumya.ckd2005@gmail.com" 
-   onclick="if(!window.navigator.userAgent.match(/Mobi/)) { 
-     window.open('https://mail.google.com/mail/?view=cm&to=soumya.ckd2005@gmail.com'); 
-     return false; 
-   }">
-  <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Email Icon">
-  <span>Email</span>
-    </a> 
-    <a href="https://github.com/soumyasengupta2005-rgb" target="_blank">
-      <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub Icon">
-      GitHub
-    </a>
-  </div>
-  <p>© 2025 Soumya Sengupta. All rights reserved.</p>
-</footer>
-    
-<div id="certificateModal" class="modal">
-  <span class="close">&times;</span>
-  <img id="certificateModalImg" class="modal-content" alt="Expanded Certificate">
-</div>
+            const links = document.querySelectorAll("a");
+            for (let link of links) {
+                if (link.hostname === window.location.hostname) {
+                    link.addEventListener("click", (e) => {
+                        if (!link.href.includes("#")) {
+                            e.preventDefault();
+                            document.body.classList.remove("fade-in");
+                            document.body.classList.add("fade-out");
+                            setTimeout(() => { window.location = link.href; }, 300);
+                        }
+                    });
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const typewriterElement = document.getElementById("typewriter");
+            const words = ["Physics Student", "Python Developer", "Game Developer", "Web Designer"];
+            let wordIndex = 0, charIndex = 0, isDeleting = false;
 
-<script src="https://unpkg.com/scrollreveal"></script>
-<script>
-  ScrollReveal().reveal('.reveal', {
-    delay: 200,
-    distance: '60px',
-    origin: 'bottom',
-    duration: 1000,
-    easing: 'ease-in-out',
-    reset: false
-  });
-</script>
-<script>
-  const certModal = document.getElementById("certificateModal");
-  const modalImg = document.getElementById("certificateModalImg");
-  const modalClose = document.querySelector(".close");
+            function type() {
+                const currentWord = words[wordIndex];
+                typewriterElement.textContent = currentWord.substring(0, charIndex);
 
-  document.querySelectorAll(".certificate-card img").forEach(img => {
-    img.addEventListener("click", () => {
-      modalImg.src = img.src;
-      certModal.style.display = "flex";
-    });
-  });
-
-  modalClose.addEventListener("click", () => {
-    certModal.style.display = "none";
-  });
-
-  window.addEventListener("click", e => {
-    if (e.target === certModal) certModal.style.display = "none";
-  });
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.add("fade-in");
-
-  const links = document.querySelectorAll("a");
-  for (let link of links) {
-    if (link.hostname === window.location.hostname) {
-      link.addEventListener("click", (e) => {
-        if (!link.href.includes("#")) {
-          e.preventDefault();
-          document.body.classList.remove("fade-in");
-          document.body.classList.add("fade-out");
-          setTimeout(() => {
-            window.location = link.href;
-          }, 300); // duration matches fade-out animation
-        }
-      });
-    }
-  }
-});
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const typewriterElement = document.getElementById("typewriter");
-    const words = [
-      "Physics Student",
-      "Python Developer",
-      "Game Developer",
-      "Web Designer"
-    ];
-    let wordIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typingSpeed = 120;
-    const deletingSpeed = 60;
-    const delayBetweenWords = 1500;
-
-    function type() {
-      const currentWord = words[wordIndex];
-      const visibleText = currentWord.substring(0, charIndex);
-      typewriterElement.textContent = visibleText;
-
-      if (!isDeleting && charIndex < currentWord.length) {
-        charIndex++;
-        setTimeout(type, typingSpeed);
-      } else if (isDeleting && charIndex > 0) {
-        charIndex--;
-        setTimeout(type, deletingSpeed);
-      } else {
-        if (!isDeleting) {
-          isDeleting = true;
-          setTimeout(type, delayBetweenWords);
-        } else {
-          isDeleting = false;
-          wordIndex = (wordIndex + 1) % words.length;
-          setTimeout(type, 500);
-        }
-      }
-    }
-    type();
-  });
-</script>
-
+                if (!isDeleting && charIndex < currentWord.length) {
+                    charIndex++;
+                    setTimeout(type, 120);
+                } else if (isDeleting && charIndex > 0) {
+                    charIndex--;
+                    setTimeout(type, 60);
+                } else {
+                    if (!isDeleting) { isDeleting = true; setTimeout(type, 1500); }
+                    else { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; setTimeout(type, 500); }
+                }
+            }
+            type();
+        });
+    </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
