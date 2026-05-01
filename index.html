@@ -113,113 +113,13 @@
         <img id="certificateModalImg" class="modal-content" alt="Expanded Certificate">
     </div>
 
-    <script>
-        // ── Starfield ──
-        const canvas = document.getElementById('starfield');
-        const ctx = canvas.getContext('2d');
-        let stars = [], shootingStars = [], W, H, frame = 0;
-
-        function resize() {
-            W = canvas.width  = canvas.offsetWidth;
-            H = canvas.height = canvas.offsetHeight;
-        }
-
-        function initStars() {
-            stars = [];
-            const count = Math.floor((W * H) / 3500);
-            for (let i = 0; i < count; i++) {
-                stars.push({
-                    x: Math.random() * W,
-                    y: Math.random() * H,
-                    r: 0.3 + Math.random() * 1.3,
-                    alpha: 0.3 + Math.random() * 0.7,
-                    speed: 0.002 + Math.random() * 0.006,
-                    phase: Math.random() * Math.PI * 2
-                });
-            }
-        }
-
-        function spawnShootingStar() {
-            shootingStars.push({
-                x: W * 0.2 + Math.random() * W * 0.7,
-                y: Math.random() * H * 0.4,
-                len: 80 + Math.random() * 100,
-                speed: 6 + Math.random() * 6,
-                alpha: 1,
-                angle: Math.PI / 5
-            });
-        }
-
-        function draw() {
-            ctx.clearRect(0, 0, W, H);
-            frame++;
-
-            for (const s of stars) {
-                const tw = 0.5 + 0.5 * Math.sin(frame * s.speed + s.phase);
-                ctx.beginPath();
-                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255,255,255,${s.alpha * tw})`;
-                ctx.fill();
-            }
-
-            for (let i = shootingStars.length - 1; i >= 0; i--) {
-                const ss = shootingStars[i];
-                const tx = ss.x - Math.cos(ss.angle) * ss.len;
-                const ty = ss.y - Math.sin(ss.angle) * ss.len;
-                const g = ctx.createLinearGradient(tx, ty, ss.x, ss.y);
-                g.addColorStop(0, `rgba(167,139,250,0)`);
-                g.addColorStop(1, `rgba(167,139,250,${ss.alpha})`);
-                ctx.beginPath();
-                ctx.moveTo(tx, ty);
-                ctx.lineTo(ss.x, ss.y);
-                ctx.strokeStyle = g;
-                ctx.lineWidth = 1.5;
-                ctx.stroke();
-                ss.x += Math.cos(ss.angle) * ss.speed;
-                ss.y += Math.sin(ss.angle) * ss.speed;
-                ss.alpha -= 0.018;
-                if (ss.alpha <= 0) shootingStars.splice(i, 1);
-            }
-
-            if (frame % 200 === 0 && Math.random() < 0.6) spawnShootingStar();
-            requestAnimationFrame(draw);
-        }
-
-        window.addEventListener('resize', () => { resize(); initStars(); });
-        resize(); initStars(); draw();
-    </script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script>
-        ScrollReveal().reveal('.reveal', {
-            delay: 200,
-            distance: '50px',
-            origin: 'bottom',
-            duration: 900,
-            easing: 'ease-in-out',
-            reset: false
-        });
-    </script>
-    <script>
-        const certModal = document.getElementById("certificateModal");
-        const modalImg = document.getElementById("certificateModalImg");
-        const modalClose = document.querySelector(".close");
-
-        document.querySelectorAll(".certificate-card img").forEach(img => {
-            img.addEventListener("click", () => {
-                modalImg.src = img.src;
-                certModal.style.display = "flex";
-            });
-        });
-
-        modalClose.addEventListener("click", () => { certModal.style.display = "none"; });
-        window.addEventListener("click", e => { if (e.target === certModal) certModal.style.display = "none"; });
-    </script>
-    <script>
         document.addEventListener("DOMContentLoaded", () => {
-            document.body.classList.add("fade-in");
 
-            const links = document.querySelectorAll("a");
-            for (let link of links) {
+            // ── Page fade transition ──
+            document.body.classList.add("fade-in");
+            document.querySelectorAll("a").forEach(link => {
                 if (link.hostname === window.location.hostname) {
                     link.addEventListener("click", (e) => {
                         if (!link.href.includes("#")) {
@@ -230,31 +130,133 @@
                         }
                     });
                 }
-            }
-        });
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const typewriterElement = document.getElementById("typewriter");
+            });
+
+            // ── Typewriter ──
+            const typewriterEl = document.getElementById("typewriter");
             const words = ["Physics Student", "Python Developer", "Game Developer", "Web Designer"];
             let wordIndex = 0, charIndex = 0, isDeleting = false;
 
             function type() {
-                const currentWord = words[wordIndex];
-                typewriterElement.textContent = currentWord.substring(0, charIndex);
-
-                if (!isDeleting && charIndex < currentWord.length) {
+                const word = words[wordIndex];
+                typewriterEl.textContent = word.substring(0, charIndex);
+                if (!isDeleting && charIndex < word.length) {
                     charIndex++;
                     setTimeout(type, 120);
                 } else if (isDeleting && charIndex > 0) {
                     charIndex--;
                     setTimeout(type, 60);
+                } else if (!isDeleting) {
+                    isDeleting = true;
+                    setTimeout(type, 1500);
                 } else {
-                    if (!isDeleting) { isDeleting = true; setTimeout(type, 1500); }
-                    else { isDeleting = false; wordIndex = (wordIndex + 1) % words.length; setTimeout(type, 500); }
+                    isDeleting = false;
+                    wordIndex = (wordIndex + 1) % words.length;
+                    setTimeout(type, 500);
                 }
             }
             type();
+
+            // ── Certificate Modal ──
+            const certModal = document.getElementById("certificateModal");
+            const modalImg  = document.getElementById("certificateModalImg");
+            const modalClose = document.querySelector(".close");
+
+            document.querySelectorAll(".certificate-card img").forEach(img => {
+                img.addEventListener("click", () => {
+                    modalImg.src = img.src;
+                    certModal.style.display = "flex";
+                });
+            });
+            modalClose.addEventListener("click", () => { certModal.style.display = "none"; });
+            window.addEventListener("click", e => { if (e.target === certModal) certModal.style.display = "none"; });
+
+            // ── ScrollReveal (exclude hero) ──
+            ScrollReveal().reveal('.reveal', {
+                delay: 200,
+                distance: '50px',
+                origin: 'bottom',
+                duration: 900,
+                easing: 'ease-in-out',
+                reset: false
+            });
+
+            // ── Starfield ──
+            const canvas = document.getElementById('starfield');
+            const ctx = canvas.getContext('2d');
+            let stars = [], shootingStars = [], W, H, frame = 0;
+
+            function resizeCanvas() {
+                const section = canvas.parentElement;
+                W = canvas.width  = section.offsetWidth;
+                H = canvas.height = section.offsetHeight;
+            }
+
+            function initStars() {
+                stars = [];
+                const count = Math.floor((W * H) / 3500);
+                for (let i = 0; i < count; i++) {
+                    stars.push({
+                        x: Math.random() * W,
+                        y: Math.random() * H,
+                        r: 0.3 + Math.random() * 1.3,
+                        alpha: 0.3 + Math.random() * 0.7,
+                        speed: 0.002 + Math.random() * 0.006,
+                        phase: Math.random() * Math.PI * 2
+                    });
+                }
+            }
+
+            function spawnShootingStar() {
+                shootingStars.push({
+                    x: W * 0.2 + Math.random() * W * 0.7,
+                    y: Math.random() * H * 0.4,
+                    len: 80 + Math.random() * 100,
+                    speed: 6 + Math.random() * 6,
+                    alpha: 1,
+                    angle: Math.PI / 5
+                });
+            }
+
+            function draw() {
+                ctx.clearRect(0, 0, W, H);
+                frame++;
+
+                for (const s of stars) {
+                    const tw = 0.5 + 0.5 * Math.sin(frame * s.speed + s.phase);
+                    ctx.beginPath();
+                    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255,255,255,${s.alpha * tw})`;
+                    ctx.fill();
+                }
+
+                for (let i = shootingStars.length - 1; i >= 0; i--) {
+                    const ss = shootingStars[i];
+                    const tx = ss.x - Math.cos(ss.angle) * ss.len;
+                    const ty = ss.y - Math.sin(ss.angle) * ss.len;
+                    const g = ctx.createLinearGradient(tx, ty, ss.x, ss.y);
+                    g.addColorStop(0, `rgba(167,139,250,0)`);
+                    g.addColorStop(1, `rgba(167,139,250,${ss.alpha})`);
+                    ctx.beginPath();
+                    ctx.moveTo(tx, ty);
+                    ctx.lineTo(ss.x, ss.y);
+                    ctx.strokeStyle = g;
+                    ctx.lineWidth = 1.5;
+                    ctx.stroke();
+                    ss.x += Math.cos(ss.angle) * ss.speed;
+                    ss.y += Math.sin(ss.angle) * ss.speed;
+                    ss.alpha -= 0.018;
+                    if (ss.alpha <= 0) shootingStars.splice(i, 1);
+                }
+
+                if (frame % 200 === 0 && Math.random() < 0.6) spawnShootingStar();
+                requestAnimationFrame(draw);
+            }
+
+            window.addEventListener('resize', () => { resizeCanvas(); initStars(); });
+            resizeCanvas();
+            initStars();
+            draw();
         });
     </script>
 </body>
