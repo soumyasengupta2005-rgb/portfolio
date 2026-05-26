@@ -519,7 +519,9 @@ footer p { margin-bottom: 1rem; }
 }
 
 .card-links a {
+  flex: 1;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 6px;
   padding: 7px 16px;
@@ -548,6 +550,17 @@ footer p { margin-bottom: 1rem; }
 .card-links a.primary:hover {
   background: #6d28d9;
   box-shadow: 0 4px 15px var(--accent-glow);
+}
+.card-links a.secondary {
+  background: transparent;
+  color: var(--accent-light);
+  border: 1px solid rgba(124, 58, 237, 0.4);
+}
+
+.card-links a.secondary:hover {
+  background: rgba(124, 58, 237, 0.12);
+  border-color: var(--accent);
+  color: var(--text);
 }
 
 /* ── Responsive ── */
